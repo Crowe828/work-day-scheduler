@@ -8,17 +8,15 @@ var currentDay = document.querySelector("#current-day");
 currentDay.textContent = moment().format("dddd, MMMM Do");
 
 // Variables hooking into the rest of the elements on the HTML page
-var schedBody = document.querySelector("body");
-var schedTxt = document.querySelectorAll("textarea");
-var schedJumbo = document.querySelector(".jumbotron");
-var schedDisc = document.querySelectorAll(".description");
-var schedBlock = document.querySelectorAll(".time-blocks");
-var schedRow = document.querySelectorAll(".row ");
-var schedHour = document.querySelectorAll(".hour");
-var schedPast = document.querySelectorAll(".past");
-var schedPresent = document.querySelectorAll(".present");
-var schedFuture = document.querySelectorAll(".future");
-var schedBtn = document.querySelectorAll(".saveBtn");
+var schedTxt = document.querySelector("textarea");
+var schedDisc = document.querySelector(".description");
+var schedBlock = document.querySelector(".time-block");
+var schedRow = document.querySelector(".row ");
+var schedHour = document.querySelector(".hour");
+var schedPast = document.querySelector(".past");
+var schedPresent = document.querySelector(".present");
+var schedFuture = document.querySelector(".future");
+var schedBtn = document.querySelector(".saveBtn");
 
 // Click event to save text area content to localStorage
 
@@ -27,24 +25,17 @@ var schedBtn = document.querySelectorAll(".saveBtn");
 
 // Change time block background color depending in the current hour (past, present, future)
 // If statement
-// Turns time into a string
-var currentTime = (moment().format("h"));
+var currentTime = moment().format("h");
 console.log(currentTime);
 
-// Set the value for each time block
-console.log(schedHour.length);
+var businessHours = [9,10,11,12,13,14,15,16,17];
 
+console.log(typeof schedBlock);
+console.log(typeof businessHours);
 
-    // if (currentTime = schedHour.textContent) {
-    //     schedDisc.append(schedPast);
-    // }
+for (let i = 0; i < businessHours.length; i++) {
+    
+    
+}
 
-    // else {
-    //     schedDisc.append(schedFuture);
-    // }
-
-    // compare (moment().format("h:mm:ss a") to 
-        // If time is current, description is red
-        // If time is past, description is grey
-        // If time is future, time is green
-
+// function forEach - for every block see if current hour is greater or less than blocks hour
