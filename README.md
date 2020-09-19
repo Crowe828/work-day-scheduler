@@ -12,7 +12,7 @@ A calendar application that allows the user to save events for each hour of the 
 ## Image
 ## Images
 
-* How the application looks when the user opens the page. The data shown in each row has been saved in localStorage. ![Work Day Scheduler](https://github.com/Crowe828/password-generator/blob/master/assets/images/work-day-scheduler.png)
+* How the application looks when the user opens the page. The data shown in each row has been saved in localStorage. ![Work Day Scheduler](https://github.com/Crowe828/work-day-scheduler/blob/master/assets/images/work-day-scheduler.png)
 
 ## Deployment
 
