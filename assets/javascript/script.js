@@ -19,9 +19,6 @@ var schedBtn = document.querySelector(".saveBtn");
 var currentTime = moment().format("H");
 console.log(currentTime);
 
-// Array of the hours in each day
-var businessHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-
 // Individually hooking into every time block
 var nine = document.querySelector("#hour-9");
 nine.value = 9;
@@ -69,6 +66,11 @@ function nineBlock() {
 }
 nineBlock();
 
+function storeDataNine() {
+  var userData = document.getElementById("userDataNine");
+  localStorage.setItem("hour-9", userData.value);
+}
+
 function tenBlock() {
   if (currentTime > ten.value) {
     console.log("10 am was earlier today.");
@@ -82,6 +84,11 @@ function tenBlock() {
   }
 }
 tenBlock();
+
+function storeDataTen() {
+  var userData = document.getElementById("userDataTen");
+  localStorage.setItem("hour-10", userData.value);
+}
 
 function elevenBlock() {
   if (currentTime > eleven.value) {
@@ -97,6 +104,11 @@ function elevenBlock() {
 }
 elevenBlock();
 
+function storeDataEleven() {
+  var userData = document.getElementById("userDataEleven");
+  localStorage.setItem("hour-11", userData.value);
+}
+
 function twelveBlock() {
   if (currentTime > twelve.value) {
     console.log("12 pm was earlier today.");
@@ -110,6 +122,11 @@ function twelveBlock() {
   }
 }
 twelveBlock();
+
+function storeDataTwelve() {
+  var userData = document.getElementById("userDataTwelve");
+  localStorage.setItem("hour-12", userData.value);
+}
 
 function oneBlock() {
   if (currentTime > one.value) {
@@ -125,6 +142,11 @@ function oneBlock() {
 }
 oneBlock();
 
+function storeDataOne() {
+  var userData = document.getElementById("userDataOne");
+  localStorage.setItem("hour-13", userData.value);
+}
+
 function twoBlock() {
   if (currentTime > two.value) {
     console.log("2 pm was earlier today.");
@@ -138,6 +160,11 @@ function twoBlock() {
   }
 }
 twoBlock();
+
+function storeDataTwo() {
+  var userData = document.getElementById("userDataTwo");
+  localStorage.setItem("hour-14", userData.value);
+}
 
 function threeBlock() {
   if (currentTime > three.value) {
@@ -153,6 +180,11 @@ function threeBlock() {
 }
 threeBlock();
 
+function storeDataThree() {
+  var userData = document.getElementById("userDataThree");
+  localStorage.setItem("hour-15", userData.value);
+}
+
 function fourBlock() {
   if (currentTime > four.value) {
     console.log("4 pm was earlier today.");
@@ -166,6 +198,11 @@ function fourBlock() {
   }
 }
 fourBlock();
+
+function storeDataFour() {
+  var userData = document.getElementById("userDataFour");
+  localStorage.setItem("hour-16", userData.value);
+}
 
 function fiveBlock() {
   if (currentTime > five.value) {
@@ -181,9 +218,39 @@ function fiveBlock() {
 }
 fiveBlock();
 
-// Click event to save text area content to localStorage
+function storeDataFive() {
+  var userData = document.getElementById("userDataFive");
+  localStorage.setItem("hour-17", userData.value);
+}
 
-// When the app opens, display content for each time block from localStorage
-// It can be opened with a loop (more efficient) or by targeting each time block seperately
+function refresh() {
+  document.getElementById("userDataNine").innerHTML = localStorage.getItem(
+    "hour-9"
+  );
+  document.getElementById("userDataTen").innerHTML = localStorage.getItem(
+    "hour-10"
+  );
+  document.getElementById("userDataEleven").innerHTML = localStorage.getItem(
+    "hour-11"
+  );
+  document.getElementById("userDataTwelve").innerHTML = localStorage.getItem(
+    "hour-12"
+  );
+  document.getElementById("userDataOne").innerHTML = localStorage.getItem(
+    "hour-13"
+  );
+  document.getElementById("userDataTwo").innerHTML = localStorage.getItem(
+    "hour-14"
+  );
+  document.getElementById("userDataThree").innerHTML = localStorage.getItem(
+    "hour-15"
+  );
+  document.getElementById("userDataFour").innerHTML = localStorage.getItem(
+    "hour-16"
+  );
+  document.getElementById("userDataFive").innerHTML = localStorage.getItem(
+    "hour-17"
+  );
+}
 
-// function forEach - for every block see if current hour is greater or less than blocks hour
+refresh();

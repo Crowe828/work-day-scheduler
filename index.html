@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
 
+    <!-- FontAwesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -17,30 +19,35 @@
       crossorigin="anonymous"
     />
 
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- Page title -->
     <title>Work Day Scheduler</title>
   </head>
 
   <body>
+    <!-- Displays the title of the page as well as today's date -->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="current-day" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeb locks go here -->
+      <!-- Time blocks for every hour 9am to 5pm -->
 
       <!-- 9am time block-->
       <div id="hour-9" class="row time-block">
         <div class="col-1 hour">9 am</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataNine" class="col-10 description"></textarea>
+        <button onclick="storeDataNine()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -48,8 +55,9 @@
       <!-- 10am time block-->
       <div id="hour-10" class="row time-block">
         <div class="col-1 hour">10 am</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataTen" class="col-10 description"></textarea>
+        <button onclick="storeDataTen()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -57,8 +65,9 @@
       <!-- 11am time block-->
       <div id="hour-11" class="row time-block">
         <div class="col-1 hour">11 am</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataEleven" class="col-10 description"></textarea>
+        <button onclick="storeDataEleven()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -66,8 +75,9 @@
       <!-- 12pm time block-->
       <div id="hour-12" class="row time-block">
         <div class="col-1 hour">12 pm</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataTwelve" class="col-10 description"></textarea>
+        <button onclick="storeDataTwelve()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -75,8 +85,9 @@
       <!-- 1pm time block-->
       <div id="hour-13" class="row time-block">
         <div class="col-1 hour">1 pm</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataOne" class="col-10 description"></textarea>
+        <button onclick="storeDataOne()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -84,8 +95,9 @@
       <!-- 2pm time block-->
       <div id="hour-14" class="row time-block">
         <div class="col-1 hour">2 pm</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataTwo" class="col-10 description"></textarea>
+        <button onclick="storeDataTwo()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -93,8 +105,9 @@
       <!-- 3pm time block-->
       <div id="hour-15" class="row time-block">
         <div class="col-1 hour">3 pm</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataThree" class="col-10 description"></textarea>
+        <button onclick="storeDataThree()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -102,8 +115,9 @@
       <!-- 4pm time block-->
       <div id="hour-16" class="row time-block">
         <div class="col-1 hour">4 pm</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataFour" class="col-10 description"></textarea>
+        <button onclick="storeDataFour()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
@@ -111,15 +125,19 @@
       <!-- 5pm time block-->
       <div id="hour-17" class="row time-block">
         <div class="col-1 hour">5 pm</div>
-        <textarea class="col-10 description"></textarea>
-        <button type="button" class="col-1 saveBtn">
+        <!-- Textarea and saveBtn are linked via JS -->
+        <textarea id="userDataFive" class="col-10 description"></textarea>
+        <button onclick="storeDataFive()" type="submit" class="col-1 saveBtn">
           <i class="fas fa-bookmark"></i>
         </button>
       </div>
     </div>
 
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Custom Script -->
     <script src="./assets/javascript/script.js"></script>
   </body>
 </html>
